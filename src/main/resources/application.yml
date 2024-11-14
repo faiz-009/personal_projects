@@ -1,0 +1,26 @@
+spring:
+  # Configuration for the data source
+  datasource:
+    # JDBC URL for connecting to the PostgreSQL database
+    url: jdbc:postgresql://localhost:5433/employee_db
+    # Username for database authentication
+    username: postgres
+    # Password for database authentication
+    password: root
+    # Driver class name for PostgreSQL
+    driver-class-name: org.postgresql.Driver
+
+  # JPA (Java Persistence API) configuration
+  jpa:
+    # Hibernate properties for JPA
+    properties:
+      hibernate:
+        # Specifies the Hibernate dialect to use for PostgreSQL
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        # Default schema to be used by Hibernate
+        default_schema: employee
+    # Hibernate-specific configurations
+    hibernate:
+      # Specifies the strategy for schema management
+      # 'update' means Hibernate will automatically update the database schema
+      ddl-auto: update
